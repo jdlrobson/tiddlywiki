@@ -29,7 +29,6 @@ TW21Saver.prototype.externalizeTiddler = function(store,tiddler)
 		if(!usePre || tags)
 			attributes += ' tags="' + tags.htmlEncode() + '"';
 		var tagArea = [], linksArea = [];
-		var tags = tiddler.tags;
 		var className = [];
 		var links = tiddler.getLinks()
 		for(var i = 0; i < tags.length; i++) {
