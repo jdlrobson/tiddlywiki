@@ -28,12 +28,27 @@ TW21Saver.prototype.externalizeTiddler = function(store,tiddler)
 		var tags = tiddler.getTags();
 		if(!usePre || tags)
 			attributes += ' tags="' + tags.htmlEncode() + '"';
-		return ('<div %0="%1"%2%3>%4</'+'div>').format([
+		var tagArea = [], linksArea = [];
+		var tags = tiddler.tags;
+		var className = [];
+		var links = tiddler.getLinks()
+		for(var i = 0; i < tags.length; i++) {
+				tagArea.push('<a class="tiddlyLink" href="#%0">%0</a>'.format(tags[i]));
+				if(tags[i] === "excludeLists") {
+					className.push("excludeLists");
+				}
+		}
+		for(var i = 0; i < links.length; i++) {
+			linksArea.push('<a class="tiddlyLink" href="#%0">%0</a>'.format(links[i]));
+		}
+		return ('<div %0="%1"%2%3 class="%7"><a name="%1"><h2>%1</h2></a>%4<div class="tagged">tags: %5</div><div class="linksArea">links: %6</div></'+'div>').format([
 				usePre ? "title" : "tiddler",
 				tiddler.title.htmlEncode(),
 				attributes,
 				extendedAttributes,
-				usePre ? "\n<pre>" + tiddler.text.htmlEncode() + "</pre>\n" : tiddler.text.escapeLineBreaks().htmlEncode()
+				usePre ? "\n<pre>" + tiddler.text.htmlEncode() + "</pre>\n" : tiddler.text.escapeLineBreaks().htmlEncode(),
+				tagArea.join(""), linksArea.join(""),
+				className.join("")
 			]);
 	} catch (ex) {
 		throw exceptionText(ex,config.messages.tiddlerSaveError.format([tiddler.title]));
