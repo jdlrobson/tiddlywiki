@@ -407,28 +407,13 @@ TiddlyWiki.prototype.loadFromDiv = function(src,idPrefix,noUpdate)
 // Returns null if there's an error
 TiddlyWiki.prototype.importTiddlyWiki = function(text)
 {
-	var posDiv = locateStoreArea(text);
-	if(!posDiv)
-		return null;
-	var content = "<" + "html><" + "body>" + text.substring(posDiv[0],posDiv[1] + endSaveArea.length) + "<" + "/body><" + "/html>";
-	// Create the iframe
-	var iframe = document.createElement("iframe");
-	iframe.style.display = "none";
-	document.body.appendChild(iframe);
-	var doc = iframe.document;
-	if(iframe.contentDocument)
-		doc = iframe.contentDocument; // For NS6
-	else if(iframe.contentWindow)
-		doc = iframe.contentWindow.document; // For IE5.5 and IE6
-	// Put the content in the iframe
-	doc.open();
-	doc.writeln(content);
-	doc.close();
-	// Load the content into a TiddlyWiki() object
-	var storeArea = doc.getElementById("storeArea");
-	this.loadFromDiv(storeArea,"store");
-	// Get rid of the iframe
-	iframe.parentNode.removeChild(iframe);
+	var store;
+	jQuery(text).each(function(i, el) {
+		if(jQuery(el).attr("id") == "storeArea") {
+			store = el;
+		}
+	});
+	this.loadFromDiv(store,"store");
 	return this;
 };
 
