@@ -54,6 +54,7 @@ function main()
 	t4 = new Date();
 	readOnly = (window.location.protocol == "file:") ? false : config.options.chkHttpReadOnly;
 	var pluginProblem = loadPlugins("systemConfig");
+	configure();
 	doc.trigger("loadPlugins");
 	t5 = new Date();
 	formatter = new Formatter(config.formatters);

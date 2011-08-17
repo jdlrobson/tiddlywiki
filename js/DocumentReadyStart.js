@@ -1,1 +1,1 @@
-jQuery(document).ready(function() {
+function configure() {
