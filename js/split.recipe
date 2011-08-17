@@ -57,5 +57,5 @@ js: http://svn.tiddlywiki.org/Trunk/association/adaptors/TiddlyWebAdaptor.js
 js: TiddlyWebConfig.js
 js: http://svn.tiddlywiki.org/Trunk/association/plugins/BinaryTiddlersPlugin.js
 js: http://svn.tiddlywiki.org/Trunk/association/plugins/RevisionsCommandPlugin.js
-js: http://svn.tiddlywiki.org/Trunk/contributors/FND/formatters/DiffFormatter.js
+js: DiffFormatter.js
 js: DocumentReadyEnd.js
