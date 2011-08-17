@@ -17,7 +17,8 @@ config.options.chkAutoSave = true;
 
 var adaptor = new config.adaptors.tiddlyweb();
 
-var workspace = "/tiddlers";
+// TODO: more generic solution needed!
+var workspace = "recipes/" + window.location.hostname.split(".")[0] + "_public";
 
 var plugin = config.extensions.tiddlyweb = {
 	host: window.location.protocol + "//" + window.location.host + "/", // TODO: address for things with a server prefix
