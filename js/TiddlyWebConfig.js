@@ -21,7 +21,7 @@ var recipe = tiddler.fields["server.recipe"];
 var workspace = recipe ? "recipes/" + recipe : "bags/common";
 
 var plugin = config.extensions.tiddlyweb = {
-	host: tiddler.fields["server.host"].replace(/\/$/, ""),
+	host: "/", // TODO: address for things with a server prefix
 	username: null,
 	status: {},
 
