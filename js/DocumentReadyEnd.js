@@ -12,5 +12,18 @@ jQuery.ajax({ url: "/tiddlers?select=tag:systemConfig&fat=y", dataType: "json",
 	}
 });
 
+jQuery.ajax({ url: "/tiddlers", dataType: "text",
+	success: function(tiddlers) {
+		var tiddler = new Tiddler("__Contents__");
+		var titles = tiddlers.split("\n");
+		var text = [];
+		for(var i = 0; i < titles.length; i++) {
+			text.push("* [[" + titles[i] + "]]");
+		}
+		tiddler.text = text.join("\n");
+		store.saveTiddler(tiddler);
+	}
+});
+
 }
 
