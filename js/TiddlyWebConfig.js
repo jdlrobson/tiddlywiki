@@ -45,7 +45,7 @@ var plugin = config.extensions.tiddlyweb = {
 };
 
 config.defaultCustomFields = {
-	"server.type": tiddler.getServerType(),
+	"server.type": "tiddlyweb",
 	"server.host": plugin.host,
 	"server.workspace": workspace
 };
