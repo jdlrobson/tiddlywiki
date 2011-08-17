@@ -1,9 +1,9 @@
 /***
 |''Name''|TiddlyWebConfig|
 |''Description''|configuration settings for TiddlyWebWiki|
-|''Author''|FND|
-|''Version''|1.3.2|
-|''Status''|stable|
+|''Author''|FND, Jon Robson|
+|''Version''|2.0.0|
+|''Status''|experimental|
 |''Source''|http://svn.tiddlywiki.org/Trunk/association/plugins/TiddlyWebConfig.js|
 |''License''|[[BSD|http://www.opensource.org/licenses/bsd-license.php]]|
 |''Requires''|TiddlyWebAdaptor ServerSideSavingPlugin|
@@ -17,8 +17,7 @@ config.options.chkAutoSave = true;
 
 var adaptor = new config.adaptors.tiddlyweb();
 
-var recipe = tiddler.fields["server.recipe"];
-var workspace = recipe ? "recipes/" + recipe : "bags/common";
+var workspace = "/tiddlers";
 
 var plugin = config.extensions.tiddlyweb = {
 	host: "/", // TODO: address for things with a server prefix
