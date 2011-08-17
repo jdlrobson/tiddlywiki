@@ -17,19 +17,10 @@ The formatter is applied to blocks wrapped in <html><code>{{{diff{..}}}</code></
 !Revision History
 !!v0.9 (2010-04-07)
 * initial release; fork of DiffFormatterPlugin
-!StyleSheet
-.diff { white-space: pre; font-family: monospace; }
-.diff ins, .diff del { display: block; text-decoration: none; }
-.diff ins { background-color: #dfd; }
-.diff del { background-color: #fdd; }
-.diff .highlight { background-color: [[ColorPalette::SecondaryPale]]; }
 !Code
 ***/
 //{{{
 (function() {
-
-config.shadowTiddlers.StyleSheetDiffFormatter = store.getTiddlerText(tiddler.title + "##StyleSheet");
-store.addNotification("StyleSheetDiffFormatter", refreshStyles);
 
 var formatters = [{
 		name: "diffWrapper",
