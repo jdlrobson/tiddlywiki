@@ -20,7 +20,7 @@ var adaptor = new config.adaptors.tiddlyweb();
 var workspace = "/tiddlers";
 
 var plugin = config.extensions.tiddlyweb = {
-	host: "/", // TODO: address for things with a server prefix
+	host: window.location.protocol + "//" + window.location.host + "/", // TODO: address for things with a server prefix
 	username: null,
 	status: {},
 
