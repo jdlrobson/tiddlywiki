@@ -53,7 +53,6 @@ function main()
 	invokeParamifier(params,"onload");
 	t4 = new Date();
 	readOnly = (window.location.protocol == "file:") ? false : config.options.chkHttpReadOnly;
-	var pluginProblem = loadPlugins("systemConfig");
 	configure();
 	doc.trigger("loadPlugins");
 	t5 = new Date();
@@ -73,10 +72,6 @@ function main()
 	restart();
 	refreshDisplay();
 	t9 = new Date();
-	if(pluginProblem) {
-		story.displayTiddler(null,"PluginManager");
-		displayMessage(config.messages.customConfigError);
-	}
 	if(showBackstage)
 		backstage.init();
 	t10 = new Date();
