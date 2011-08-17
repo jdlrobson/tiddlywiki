@@ -53,5 +53,6 @@ js: TiddlyWebShadows.js
 js: TiddlyWebConfig.js
 js: http://svn.tiddlywiki.org/Trunk/association/plugins/BinaryTiddlersPlugin.js
 js: http://svn.tiddlywiki.org/Trunk/association/plugins/RevisionsCommandPlugin.js
+js: https://raw.github.com/jdlrobson/TiddlyWikiPlugins/master/plugins/LoadMissingTiddlers/LoadMissingTiddlersPlugin.js
 js: DiffFormatter.js
 js: DocumentReadyEnd.js

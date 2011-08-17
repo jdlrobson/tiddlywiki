@@ -10,3 +10,10 @@ config.shadowTiddlers.StyleSheetDiffFormatter = ["!StyleSheet",
 store.addNotification("StyleSheetDiffFormatter", refreshStyles);
 var NOP = function() {};
 window.backstage = { init: NOP, isPanelVisible: NOP };
+config.extensions.tiddlyspace = {
+	currentSpace: {
+		name: window.location.hostname.split(".")[0]
+	}
+};
+config.shadowTiddlers.TiddlySpaceFloorboards = ["tiddlyspace", "system-theme_public", "system-info_public",
+	"system-images_public", "%0_private", "%0_public", "%0_archive", "glossary_public"].join("\n");
