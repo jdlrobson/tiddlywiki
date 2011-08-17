@@ -26,6 +26,7 @@ js: Refresh.js
 js: Options.js
 js: Saving.js
 js: AdaptorBase.js
+js: FileSystem.js
 js: Http.js
 js: Utilities.js
 js: UtilitiesPopup.js
