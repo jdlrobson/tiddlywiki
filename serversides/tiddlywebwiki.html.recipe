@@ -2,3 +2,4 @@ recipe: ../html/split.recipe
 recipe: ../shadows/split.recipe
 recipe: ../js/split.recipe
 recipe: ../jquery/split.recipe
+jslib: TiddlyWebSaver.js
