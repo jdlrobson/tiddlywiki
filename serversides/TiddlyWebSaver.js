@@ -1002,7 +1002,7 @@ var tiddlywebsaver = function($, tiddler) {
 };
 tiddlywiki.ready(function() {
 	var tiddler = new Tiddler("tiddlyweb");
-	merge(tiddler.fields, { "server.host": $("#tiddlyweb .host").text(),
-		"server.type": "tiddlyweb", "server.workspace": $("#tiddlyweb .workspace").text() });
+	merge(tiddler.fields, { "server.host": $("#tiddlywebconfig .host").text(),
+		"server.type": "tiddlyweb", "server.workspace": $("#tiddlywebconfig .workspace").text() });
 	tiddlywebsaver(jQuery, tiddler);
 });
