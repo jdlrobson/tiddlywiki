@@ -2,6 +2,12 @@
 //-- Main
 //--
 
+var tiddlywiki = {
+	callbacks: [],
+	ready: function(callback) {
+		this.callbacks.push(callback);
+	}
+};
 var params = null; // Command line parameters
 var store = null; // TiddlyWiki storage
 var story = null; // Main story
@@ -55,6 +61,15 @@ function main()
 	readOnly = (window.location.protocol == "file:") ? false : config.options.chkHttpReadOnly;
 	var pluginProblem = loadPlugins("systemConfig");
 	doc.trigger("loadPlugins");
+	tiddlywiki.ready = function(callback) {
+		var callbacks = this.callbacks;
+		this.callbacks = [];
+		for(var i = 0; i < callbacks.length; i++) {
+			callbacks[i]();
+		}
+		if(callback) callback();
+	};
+	tiddlywiki.ready();
 	t5 = new Date();
 	formatter = new Formatter(config.formatters);
 	invokeParamifier(params,"onconfig");
