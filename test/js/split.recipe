@@ -18,6 +18,7 @@ jquery: Tiddler.js
 jquery: TiddlerFields.js
 jquery: TiddlyWiki.js
 jquery: Filters.js
+jquery: TW21Loader.js
 jquery: TW21Saver.js
 jquery: Utilities.js
 jquery: Version.js
