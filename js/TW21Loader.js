@@ -25,15 +25,7 @@ TW21Loader.prototype.getTitle = function(store,node)
 TW21Loader.prototype.internalizeTiddler = function(store,tiddler,title,node)
 {
 	var e = node.firstChild;
-	var text = null;
-	if(node.getAttribute("tiddler")) {
-		text = getNodeText(e).unescapeLineBreaks();
-	} else {
-		while(e.nodeName!="PRE" && e.nodeName!="pre") {
-			e = e.nextSibling;
-		}
-		text = e.innerHTML.replace(/\r/mg,"").htmlDecode();
-	}
+	var text = jQuery(node).text();
 	var creator = node.getAttribute("creator");
 	var modifier = node.getAttribute("modifier");
 	var c = node.getAttribute("created");

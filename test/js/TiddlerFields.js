@@ -17,7 +17,7 @@ jQuery(document).ready(function(){
 		strictEqual(val4, "4t");
 		strictEqual(val5, "bar\n");
 		strictEqual(val6, "test\n");
-		strictEqual(val7, "welcome\n");
+		strictEqual(val7, "welcome\n\n");
 		strictEqual(val8, "two");
 	});
 });
