@@ -53,6 +53,7 @@ function main()
 	invokeParamifier(params,"onload");
 	t4 = new Date();
 	readOnly = (window.location.protocol == "file:") ? false : config.options.chkHttpReadOnly;
+	doc.trigger("beforeLoadPlugins");
 	var pluginProblem = loadPlugins("systemConfig");
 	doc.trigger("loadPlugins");
 	t5 = new Date();
