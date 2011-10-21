@@ -162,14 +162,8 @@ config.macros.saveToWeb = { // XXX: hijack existing sync macro?
 	}
 };
 
-// hijack saveChanges to trigger remote saving
-var _saveChanges = saveChanges;
 saveChanges = function(onlyIfDirty, tiddlers) {
-	if(window.location.protocol == "file:") {
-		_saveChanges.apply(this, arguments);
-	} else {
-		plugin.sync(tiddlers);
-	}
+	plugin.sync(tiddlers);
 };
 
 // override removeTiddler to flag tiddler as deleted -- XXX: use hijack to preserve compatibility?

@@ -21,9 +21,7 @@ if(!config.adaptors.tiddlyweb) {
 	throw "Missing dependency: TiddlyWebAdaptor";
 }
 
-if(window.location.protocol != "file:") {
-	config.options.chkAutoSave = true;
-}
+config.options.chkAutoSave = true;
 
 var adaptor = new config.adaptors.tiddlyweb();
 var host = $("#tiddlywikiconfig [name=host]").val();
