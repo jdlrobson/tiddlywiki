@@ -12,6 +12,7 @@
 ***/
 //{{{
 (function($) {
+$(document).ready(function() {
 
 if(!config.extensions.ServerSideSavingPlugin) {
 	throw "Missing dependency: ServerSideSavingPlugin";
@@ -24,12 +25,14 @@ if(window.location.protocol != "file:") {
 	config.options.chkAutoSave = true;
 }
 
-var adaptor = tiddler.getAdaptor();
-var recipe = tiddler.fields["server.recipe"];
-var workspace = recipe ? "recipes/" + recipe : "bags/common";
+var adaptor = new config.adaptors.tiddlyweb();
+var host = $("#tiddlywikiconfig [name=host]").val();
+var workspace = $("#tiddlywikiconfig [name=workspace]").val();
+workspace = workspace ? workspace : "bags/common";
+host = host ? host : "/";
 
 var plugin = config.extensions.tiddlyweb = {
-	host: tiddler.fields["server.host"].replace(/\/$/, ""),
+	host: host.replace(/\/$/, ""),
 	username: null,
 	status: {},
 
@@ -53,7 +56,7 @@ var plugin = config.extensions.tiddlyweb = {
 };
 
 config.defaultCustomFields = {
-	"server.type": tiddler.getServerType(),
+	"server.type": "tiddlyweb",
 	"server.host": plugin.host,
 	"server.workspace": workspace
 };
@@ -130,5 +133,6 @@ var getStatus = function(callback) {
 };
 (plugin.getStatus = getStatus)(); // XXX: hacky (arcane combo of assignment plus execution)
 
+});
 })(jQuery);
 //}}}
