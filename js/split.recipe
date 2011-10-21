@@ -31,7 +31,6 @@ js: Saving.js
 js: SavingRSS.js
 js: FileSystem.js
 js: AdaptorBase.js
-js: FileAdaptor.js
 js: Http.js
 js: Utilities.js
 js: UtilitiesPopup.js
@@ -51,4 +50,7 @@ js: Dom.js
 js: LoaderSaver.js
 js: TW21Loader.js
 js: TW21Saver.js
+js: tiddlywebwiki/TiddlyWebAdaptor.js
+js: tiddlywebwiki/ServerSideSavingPlugin.js
+js: tiddlywebwiki/TiddlyWebConfig.js
 

@@ -21,3 +21,6 @@ tests.html:
 
 alpha:
 	./bldalpha
+
+twebwiki:
+	./bldtwebwiki
